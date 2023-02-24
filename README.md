@@ -9,7 +9,7 @@
 Clone the project
 
 ```bash
-  git@github.com:believemanasseh/wareed_test.git
+  git clone git@github.com:believemanasseh/wareed_test.git
 ```
 
 Go to the project directory
