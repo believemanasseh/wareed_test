@@ -7,7 +7,6 @@ from rest_framework.views import APIView
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 from django.core.exceptions import ObjectDoesNotExist
-from django.db.models import Q
 
 from core.models import Student
 from core.serializers import EmailSerializer, StudentSerializer
