@@ -24,6 +24,12 @@ Install dependencies
   pip install -r requirements.txt
 ```
 
+Create superuser account
+
+```bash
+  python3 manage.py createsuperuser
+```
+
 Run migrations
 
 ```bash
