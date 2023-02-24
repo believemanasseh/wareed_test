@@ -7,6 +7,7 @@ from rest_framework.views import APIView
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 from django.core.exceptions import ObjectDoesNotExist
+from django.db.models import Q
 
 from core.models import Student
 from core.serializers import EmailSerializer, StudentSerializer
@@ -179,7 +180,7 @@ class StudentsByAge(APIView):
             )
 
         dt = datetime.today() - relativedelta(years=int(age))
-        students = Student.objects.filter(date_of_birth__year__gt=dt.year)
+        students = Student.objects.filter(date_of_birth__gt=dt)
         if students:
             serializer = StudentSerializer(students, many=True)
             return Response(
@@ -213,7 +214,7 @@ class SendEmails(APIView):
             if not res:
                 return Response(
                     {"status": "error", "message": "Email NOT sent successfully"},
-                    status=status.HTTP_400_BAD_REQUEST,
+                    status=status.HTTP_422_UNPROCESSABLE_ENTITY,
                 )
             return Response(
                 {
