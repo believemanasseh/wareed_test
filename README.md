@@ -53,8 +53,6 @@ To run this project, you will need to add the following environment variables to
 
 `DB_PASSWORD`
 
-`DEFAULT_FROM_EMAIL`
-
 `EMAIL_HOST_USER`
 
 `EMAIL_HOST_PASSWORD`
